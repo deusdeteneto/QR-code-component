@@ -28,7 +28,7 @@ main {
 
 .card-title {
   font-family: "Outfit", sans-serif;
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 700;
   font-style: normal;
   color: var(--slate-900) !important;
@@ -36,7 +36,7 @@ main {
 
 .card-text {
   font-family: "Outfit", sans-serif;
-  font-size: 13px;
+  font-size: 16px !important;
   font-weight: 400;
   font-style: normal;
   color: var(--slate-500) !important;
