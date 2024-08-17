@@ -19,7 +19,7 @@ Este projeto é uma solução para o [desafio de componente de código QR no Fro
 
 ### Screenshot
 
-![Screenshot do Projeto](./screenshot.jpg)
+![Screenshot do Projeto](https://raw.githubusercontent.com/deusdeteneto/QR-code-component/master/design/desktop-design.jpeg)
 
 ### Links
 
