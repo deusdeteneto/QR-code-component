@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
 
 :root {
-  --white: hsl(0, 0%, 100%);
-  --slate-300: hsl(212, 45%, 89%);
-  --slate-500: hsl(216, 15%, 48%);
-  --slate-900: hsl(218, 44%, 22%);
+  --white: #ffffff;
+  --slate-300: #d6e2f0;
+  --slate-500: #68778d;
+  --slate-900: #1f3251;
 }
 
 body {
@@ -42,14 +42,6 @@ main {
   color: var(--slate-500) !important;
 }
 
-.outfit {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* Footer */
 footer {
   font-size: 11px;
   text-align: center;
@@ -58,4 +50,32 @@ footer {
 
 footer a {
   color: hsl(228, 45%, 44%);
+}
+
+button {
+  font-family: "Outfit", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--white) !important;
+}
+
+/* Centralizando e sobrepondo o QR code à imagem */
+#qrcode {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Garante que o centro do QR code coincida com o centro da imagem */
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+}
+
+#default-image {
+  z-index: 1;
+  width: 100%; /* Mantém o tamanho da imagem responsivo */
+  height: auto; /* Mantém a proporção */
 }
