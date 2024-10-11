@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,7 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | QR code component</title>
+    <title>QRcode - App</title>
   </head>
   <body>
     <main class="d-flex justify-content-center align-items-center vh-100">
@@ -25,38 +25,68 @@
         class="card text-center p-3 rounded-4 shadow-lg"
         style="width: 18rem"
       >
-        <img
-          src="images/image-qr-code.png"
-          class="card-img-top rounded-3"
-          alt="QR-code component"
-        />
+        <!-- Div QR Code gerado -->
+        <div class="position-relative">
+          <img
+            src="images/image-qr-code.png"
+            id="default-image"
+            class="default-image card-img-top rounded-3"
+            alt="QR-code component"
+          />
+          <div id="qrcode" class="qrcode-geration position-absolute"></div>
+        </div>
+
         <div class="card-body">
-          <h5 class="card-title">
-            Improve your front-end skills by building projects
-          </h5>
+          <h5 class="card-title">Crie seu QR Code Gratuitamente!</h5>
           <p class="card-text">
-            Scan the QR code to visit Frontend Mentor and take your coding
-            skills to the next level
+            Abra a câmera do seu smartphone e deixe-a apontada em direção ao QR
+            Code por alguns segundos.
+            <br />
+            Pronto! Compartilhe agora mesmo seu QR Code.
           </p>
+        </div>
+
+        <!-- Campo de input para URL -->
+        <div class="input-group mb-1">
+          <input
+            type="text"
+            id="url-input"
+            class="form-control"
+            placeholder="Insira a URL"
+            aria-label="URL para gerar QR Code"
+          />
+          <button
+            class="btn btn-primary"
+            id="generate-btn"
+            type="button"
+            onclick="generateQRCode()"
+          >
+            QR Code
+          </button>
         </div>
       </div>
     </main>
 
-    <!-- TODO Rever links -->
     <footer class="attribution">
       Challenge by
       <a
-        href="https://www.frontendmentor.io/learning-paths/getting-started-on-frontend-mentor-XJhRWRREZd/steps/66b5556445dac691039c60ca/challenge/submit"
+        href="https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H"
         target="_blank"
         >Frontend Mentor</a
       >. Coded by
       <a href="https://github.com/deusdeteneto" target="_blank">Neto</a>.
     </footer>
 
+    <!-- QRCode.js para geração dinâmica de QR codes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
+    <script src="script/script.js"></script>
   </body>
 </html>

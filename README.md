@@ -23,9 +23,8 @@ Este projeto é uma solução para o [desafio de componente de código QR no Fro
 
 ### Links
 
-<!-- Ajustar URLs -->
-- URL da Solução: [Adicionar URL da solução aqui](https://your-solution-url.com)
-- URL do Site: [Adicionar URL do site aqui](https://your-live-site-url.com)
+- URL da Solução: [Adicionar URL da solução aqui](https://www.frontendmentor.io/solutions/qr-code-component-solution-eFCseqY80a)
+- URL do Site: [Adicionar URL do site aqui](https://deusdeteneto.github.io/QR-code-component/)
 
 ## Meu processo
 
