@@ -1,6 +1,7 @@
 function generateQRCode() {
   const url = document.getElementById("url-input").value;
   const qrcodeDiv = document.getElementById("qrcode");
+  const urlInput = document.getElementById("url-input");
 
   // Limpa o QR code
   qrcodeDiv.innerHTML = "";
@@ -26,4 +27,9 @@ function generateQRCode() {
     // Aanimação CSS
     qrcodeDiv.classList.add("qrcode-animation");
   }
+
+  //TODO Criar uma lógica para que ao clicar no input, o mesmo deve ser limpo
+  urlInput.addEventListener("click", function () {
+    urlInput.value = ""; // Limpa o valor do input
+  });
 }
