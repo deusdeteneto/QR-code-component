@@ -79,3 +79,18 @@ button {
   width: 100%; /* Mantém o tamanho da imagem responsivo */
   height: auto; /* Mantém a proporção */
 }
+
+@keyframes granulado {
+  0% {
+    filter: blur(10px) brightness(2) contrast(0.5); /* Começa muito desfocado e brilhante */
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0) brightness(1) contrast(1); /* QR Code nítido no final */
+    opacity: 1;
+  }
+}
+
+.qrcode-animation {
+  animation: granulado 1s ease-out forwards; /* Aplica a animação granular */
+}
