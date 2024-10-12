@@ -42,13 +42,6 @@ Durante o desenvolvimento deste projeto, aprendi a trabalhar com a centralizaç�
 
 Aqui está um exemplo de código que utilizei:
 
-```html
-<main class="d-flex justify-content-center align-items-center vh-100">
-  <div class="card text-center p-3 rounded-4 shadow-lg" style="width: 18rem">
-    <!-- Conteúdo do cartão -->
-  </div>
-</main>
-```
 
 ### Desenvolvimento contínuo
 
