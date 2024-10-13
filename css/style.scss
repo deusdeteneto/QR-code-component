@@ -1,30 +1,251 @@
-.user {
-  color: $slate-900;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
 
-  .text-create {
-    font-size: 14px;
-    font-weight: default;
+$white: #ffffff;
+$orange-tomato: #f24e1e;
+$blue-primary: #0d6efd;
+$slate-300: #d6e2f0;
+$slate-500: #68778d;
+$slate-900: #1f3251;
+
+body {
+  background: url(../images/cover-bg.png) center/cover no-repeat;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.efeito-vidro {
+  width: 100%;
+  height: 90%;
+  background: rgba($white, 0.07);
+  box-shadow: 0 8px 32px rgba($slate-900, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* Compatibilidade com navegadores WebKit */
+  border-radius: 28px;
+  border: 2px solid rgba($white, 0.2);
+  padding: 20px;
+  color: lighten($blue-primary, 40%);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line-one {
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    font-size: 60px;
+    color: $slate-900;
+    font-weight: medium;
+    align-content: flex-end;
+
+    .title-orange {
+      color: $orange-tomato;
+      font-weight: bold;
+    }
   }
 
-  .user-link {
-    display: flex !important;
-    align-items: center !important; // Garante que a imagem e o texto estejam alinhados verticalmente
-    margin-top: 5px; // Adiciona um pequeno espaço entre o texto e a imagem
+  .img-card-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
 
-    img {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      margin-right: 10px;
+    .img-card-qr-code {
+      width: 150px;
     }
 
-    .text-user {
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 35px; // Ajuste para centralizar com a imagem
+    .btn-work {
+      background-color: $orange-tomato;
+      border: none;
+      border-radius: 20px;
+      font-weight: normal;
+      width: 150px;
+      color: $white;
     }
   }
 }
+
+.description {
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .description-content {
+    flex-grow: 1; // Permite que o conteúdo cresça e preencha o espaço disponível
+  }
+
+  .tag {
+    margin-bottom: 1rem;
+    button {
+      color: $blue-primary !important;
+      background-color: $white;
+      font-size: 20px;
+      font-weight: 600;
+      border-radius: 20px;
+      border: none;
+      padding: 6px 26px;
+      margin: 4px;
+      cursor: default;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .text-body {
+    font-size: 16px;
+    font-weight: 500 !important;
+    color: $slate-900 !important;
+    margin-bottom: 1rem;
+  }
+
+  .user {
+    color: $slate-900;
+    margin-top: auto;
+
+    .text-create {
+      font-size: 14px;
+      font-weight: normal;
+      margin-bottom: 5px; // Adiciona um pequeno espaço entre o texto "Criado por:" e o link do usuário
+    }
+
+    .user-link {
+      display: flex;
+      align-items: center; // Alinha verticalmente os itens dentro de user-link
+
+      img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .text-user {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0; // Remove qualquer margem padrão que possa estar afetando o alinhamento
+        line-height: 35px; // Iguala a altura da linha à altura da imagem para centralização vertical
+      }
+    }
+  }
+}
+
+.card {
+  background-color: $white;
+  border: none !important;
+
+  .card-title {
+    font-family: "Outfit", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: $slate-900 !important;
+  }
+
+  .card-text {
+    font-family: "Outfit", sans-serif;
+    font-size: 16px !important;
+    font-weight: 400;
+    color: $slate-500 !important;
+  }
+
+  #qrcode {
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    z-index: 10;
+  }
+
+  #default-image {
+    z-index: 1;
+    width: 100%; /* Mantém o tamanho da imagem responsivo */
+    height: auto; /* Mantém a proporção */
+  }
+
+  @keyframes granulado {
+    0% {
+      filter: blur(10px) brightness(2) contrast(0.5); /* Começa desfocado e brilhante */
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0) brightness(1) contrast(1); /* QR Code nítido no final */
+      opacity: 1;
+    }
+  }
+
+  .qrcode-animation {
+    animation: granulado 1s ease-out forwards;
+  }
+}
+
+.chanels {
+  font-family: "Outfit", sans-serif;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .chanels-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: $slate-900;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  .arrow-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .pictures-arrow {
+    height: 180px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left bottom;
+  }
+}
+
+footer {
+  font-size: 11px;
+  text-align: center;
+  padding: 10px;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+//botao conhecer mais sobre meu trabalho
+button {
+  font-family: "Outfit", sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700;
+  color: $white !important;
+}
+
+// Estilos existentes...
 
 .user {
   color: $slate-900;

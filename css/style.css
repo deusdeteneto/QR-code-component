@@ -10,7 +10,7 @@ body {
 
 .efeito-vidro {
   width: 100%;
-  height: 92%;
+  height: 90%;
   background: rgba(255, 255, 255, 0.07);
   box-shadow: 0 8px 32px rgba(31, 50, 81, 0.2);
   backdrop-filter: blur(4px);
@@ -37,6 +37,7 @@ main {
   font-size: 60px;
   color: #1f3251;
   font-weight: medium;
+  align-content: flex-end;
 }
 .line-one .title .title-orange {
   color: #f24e1e;
@@ -62,6 +63,15 @@ main {
 
 .description {
   font-family: "Outfit", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.description .description-content {
+  flex-grow: 1;
+}
+.description .tag {
+  margin-bottom: 1rem;
 }
 .description .tag button {
   color: #0d6efd !important;
@@ -70,25 +80,30 @@ main {
   font-weight: 600;
   border-radius: 20px;
   border: none;
-  padding: 6px 20px;
-  margin: 2px;
+  padding: 6px 26px;
+  margin: 4px;
   cursor: default;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .description .text-body {
   font-size: 16px;
   font-weight: 500 !important;
   color: #1f3251 !important;
+  margin-bottom: 1rem;
 }
 .description .user {
   color: #1f3251;
+  margin-top: auto;
 }
 .description .user .text-create {
   font-size: 14px;
-  font-weight: default;
+  font-weight: normal;
+  margin-bottom: 5px;
 }
 .description .user .user-link {
-  display: flex !important;
-  align-items: center !important;
+  display: flex;
+  align-items: center;
 }
 .description .user .user-link img {
   width: 35px;
@@ -99,6 +114,8 @@ main {
 .description .user .user-link .text-user {
   font-size: 16px;
   font-weight: bold;
+  margin: 0;
+  line-height: 35px;
 }
 
 .card {
@@ -147,12 +164,37 @@ main {
 
 .chanels {
   font-family: "Outfit", sans-serif;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.chanels .chanels-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .chanels h2 {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 600;
   color: #1f3251;
   text-align: center;
+  margin-bottom: 100px;
+}
+.chanels .arrow-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.chanels .pictures-arrow {
+  height: 180px;
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: left bottom;
+     object-position: left bottom;
 }
 
 footer {
@@ -169,4 +211,68 @@ button {
   font-size: 13px !important;
   font-weight: 700;
   color: #ffffff !important;
+}
+
+.user {
+  color: #1f3251;
+}
+.user .text-create {
+  font-size: 14px;
+  font-weight: default;
+}
+.user .user-link {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 5px;
+}
+.user .user-link img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user .user-link .text-user {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+@media (max-width: 768px) {
+  .line-one {
+    flex-direction: column;
+  }
+  .line-one .col-md-8,
+  .line-one .col-md-4 {
+    width: 100%;
+  }
+  .line-one .title {
+    font-size: 40px;
+  }
+  .description,
+  .chanels {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .chanels {
+    display: none !important;
+  }
+}
+.line-two {
+  margin-top: 2rem;
+}
+
+.card {
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .input-group {
+    flex-direction: column;
+  }
+  .input-group .form-control,
+  .input-group .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */
