@@ -16,52 +16,98 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <!-- TODO Alterar o Título -->
     <title>QRcode - App</title>
   </head>
   <body>
     <main class="d-flex justify-content-center align-items-center vh-100">
-      <div
-        class="card text-center p-3 mt-5 shadow-lg"
-        style="width: 18rem"
-      >
-        <!-- Div QR Code gerado -->
-        <div class="position-relative">
-          <img
-            src="images/image-qr-code.png"
-            id="default-image"
-            class="default-image card-img-top rounded-3"
-            alt="QR-code component"
-          />
-          <div id="qrcode" class="qrcode-geration position-absolute"></div>
+      <div class="container efeito-vidro d-flex flex-column px-5">
+        <div class="row line-one d-flex align-items-center">
+          <div class="col-md-8 col-sm-12">
+            <h1 class="title">
+              Transforme links <br />
+              em <span class="title-orange">QR codes</span>
+            </h1>
+          </div>
+          <div class="col-md-4 col-sm-12 img-card-qr">
+            <img
+              src="images/card-qr-code.png"
+              alt=""
+              class="img-card-qr-code"
+            />
+            <button class="btn-work mt-2">
+              Conheça mais sobre meu trabalho
+            </button>
+          </div>
         </div>
 
-        <div class="card-body px-1">
-          <h5 class="card-title">Crie seu QR Code</h5>
-          <p class="card-text">
-            Abra a câmera do seu smartphone aponte-a em direção ao QR Code.
-            <br />
-            Pronto! Você já pode compartilhar seu QR Code.
-          </p>
-        </div>
+        <div class="row line-two justify-content-center text-center">
+          <div class="col-md-4 col-sm-12 description d-md-block d-none">
+            <div class="tag">
+              <button>Rápido</button>
+              <button>Fácil</button>
+              <button>Acessível</button>
+            </div>
+            <p class="text-body">
+              QR Codes são práticos, rápidos e perfeitos para compartilhar
+              informações com qualquer pessoa em apenas um scan. Ideal para
+              empresas, eventos ou compartilhamento de links pessoais.
+            </p>
+            <div class="user">
+              <p class="text-create">Criado por:</p>
+              <div class="user-link">
+                <img src="images/perfil.jpeg" alt="" />
+                <p class="text-user">@deusdeteneto</p>
+              </div>
+            </div>
+          </div>
 
-        <!-- Campo de input para URL -->
-        <div class="input-group mb-1">
-          <input
-            type="text"
-            id="url-input"
-            class="form-control"
-            placeholder="Insira a URL"
-            aria-label="URL para gerar QR Code"
-          />
-          <button
-            class="btn btn-primary"
-            id="generate-btn"
-            type="button"
-            onclick="generateQRCode()"
+          <div
+            class="col-md-4 col-sm-12 card text-center p-3 rounded-4 shadow"
+            style="width: 18rem"
           >
-            QR Code
-          </button>
+            <div class="position-relative">
+              <img
+                src="images/image-qr-code.png"
+                id="default-image"
+                class="default-image card-img-top rounded-3"
+                alt="QR-code component"
+              />
+              <div id="qrcode" class="qrcode-geration position-absolute"></div>
+            </div>
+            <div class="card-body px-1">
+              <h5 class="card-title">Crie seu QR Code</h5>
+              <p class="card-text">
+                Abra a câmera do seu smartphone aponte-a em direção ao QR Code.
+                <br />
+                Pronto! Você já pode compartilhar seu QR Code.
+              </p>
+            </div>
+            <div class="input-group mb-1">
+              <input
+                type="text"
+                id="url-input"
+                class="form-control"
+                placeholder="Insira a URL"
+                aria-label="URL para gerar QR Code"
+              />
+              <button
+                class="btn btn-primary"
+                id="generate-btn"
+                type="button"
+                onclick="generateQRCode()"
+              >
+                QR Code
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 chanels d-md-flex d-none flex-column">
+            <h2 class="d-flex align-items-center">
+              Converta seus links <br />
+              em QR Codes com um único clique!
+            </h2>
+            <img src="images/seta.svg" alt="" />
+          </div>
         </div>
       </div>
     </main>
@@ -76,16 +122,13 @@
       <a href="https://github.com/deusdeteneto" target="_blank">Neto</a>.
     </footer>
 
-    <!-- QRCode.js para geração dinâmica de QR codes -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
-
     <script src="script/script.js"></script>
   </body>
 </html>

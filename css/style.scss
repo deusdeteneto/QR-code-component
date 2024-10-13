@@ -1,0 +1,105 @@
+.user {
+  color: $slate-900;
+
+  .text-create {
+    font-size: 14px;
+    font-weight: default;
+  }
+
+  .user-link {
+    display: flex !important;
+    align-items: center !important; // Garante que a imagem e o texto estejam alinhados verticalmente
+    margin-top: 5px; // Adiciona um pequeno espaço entre o texto e a imagem
+
+    img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .text-user {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 35px; // Ajuste para centralizar com a imagem
+    }
+  }
+}
+
+.user {
+  color: $slate-900;
+
+  .text-create {
+    font-size: 14px;
+    font-weight: default;
+  }
+
+  .user-link {
+    display: flex !important;
+    align-items: center !important;
+    margin-top: 5px;
+
+    img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .text-user {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 35px;
+    }
+  }
+}
+
+// Responsividade para dispositivos menores
+@media (max-width: 768px) {
+  .line-one {
+    flex-direction: column;
+
+    .col-md-8,
+    .col-md-4 {
+      width: 100%;
+    }
+
+    .title {
+      font-size: 40px;
+    }
+  }
+
+  .description,
+  .chanels {
+    display: none !important; // Garante que esses elementos não sejam exibidos em dispositivos móveis
+  }
+}
+
+// Ajuste para telas médias
+@media (min-width: 769px) and (max-width: 992px) {
+  .chanels {
+    display: none !important; // Oculta .chanels em telas médias
+  }
+}
+
+// Estilos adicionais para melhorar o layout
+.line-two {
+  margin-top: 2rem;
+}
+
+.card {
+  margin: 0 auto; // Centraliza o card horizontalmente
+}
+
+// Ajuste para garantir que o botão fique alinhado com o input em telas menores
+@media (max-width: 576px) {
+  .input-group {
+    flex-direction: column;
+
+    .form-control,
+    .btn {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+}

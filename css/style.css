@@ -1,19 +1,24 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
-
-:root {
-  --white: #ffffff;
-  --slate-300: #d6e2f0;
-  --slate-500: #68778d;
-  --slate-900: #1f3251;
-}
-
 body {
-  background-image: url('../images/cover-bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url(../images/cover-bg.png) center/cover no-repeat;
   margin: 0;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.efeito-vidro {
+  width: 100%;
+  height: 92%;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px rgba(31, 50, 81, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* Compatibilidade com navegadores WebKit */
+  border-radius: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  color: #d7e7ff;
   display: flex;
   flex-direction: column;
 }
@@ -24,25 +29,130 @@ main {
   align-items: center;
 }
 
-.card {
-  background-color: var(--white);
-  border: none !important;
+.line-one {
+  display: flex;
+  justify-content: space-between;
+}
+.line-one .title {
+  font-size: 60px;
+  color: #1f3251;
+  font-weight: medium;
+}
+.line-one .title .title-orange {
+  color: #f24e1e;
+  font-weight: bold;
+}
+.line-one .img-card-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.line-one .img-card-qr .img-card-qr-code {
+  width: 150px;
+}
+.line-one .img-card-qr .btn-work {
+  background-color: #f24e1e;
+  border: none;
+  border-radius: 20px;
+  font-weight: normal;
+  width: 150px;
+  color: #ffffff;
 }
 
-.card-title {
+.description {
+  font-family: "Outfit", sans-serif;
+}
+.description .tag button {
+  color: #0d6efd !important;
+  background-color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 20px;
+  border: none;
+  padding: 6px 20px;
+  margin: 2px;
+  cursor: default;
+}
+.description .text-body {
+  font-size: 16px;
+  font-weight: 500 !important;
+  color: #1f3251 !important;
+}
+.description .user {
+  color: #1f3251;
+}
+.description .user .text-create {
+  font-size: 14px;
+  font-weight: default;
+}
+.description .user .user-link {
+  display: flex !important;
+  align-items: center !important;
+}
+.description .user .user-link img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.description .user .user-link .text-user {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card {
+  background-color: #ffffff;
+  border: none !important;
+}
+.card .card-title {
   font-family: "Outfit", sans-serif;
   font-size: 21px;
   font-weight: 700;
-  font-style: normal;
-  color: var(--slate-900) !important;
+  color: #1f3251 !important;
 }
-
-.card-text {
+.card .card-text {
   font-family: "Outfit", sans-serif;
   font-size: 16px !important;
   font-weight: 400;
-  font-style: normal;
-  color: var(--slate-500) !important;
+  color: #68778d !important;
+}
+.card #qrcode {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+}
+.card #default-image {
+  z-index: 1;
+  width: 100%; /* Mantém o tamanho da imagem responsivo */
+  height: auto; /* Mantém a proporção */
+}
+@keyframes granulado {
+  0% {
+    filter: blur(10px) brightness(2) contrast(0.5); /* Começa desfocado e brilhante */
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0) brightness(1) contrast(1); /* QR Code nítido no final */
+    opacity: 1;
+  }
+}
+.card .qrcode-animation {
+  animation: granulado 1s ease-out forwards;
+}
+
+.chanels {
+  font-family: "Outfit", sans-serif;
+}
+.chanels h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1f3251;
+  text-align: center;
 }
 
 footer {
@@ -50,7 +160,6 @@ footer {
   text-align: center;
   padding: 10px;
 }
-
 footer a {
   color: hsl(228, 45%, 44%);
 }
@@ -59,41 +168,5 @@ button {
   font-family: "Outfit", sans-serif !important;
   font-size: 13px !important;
   font-weight: 700;
-  font-style: normal;
-  color: var(--white) !important;
-}
-
-/* Centralizando e sobrepondo o QR code à imagem */
-#qrcode {
-  position: absolute;
-  top: 50%; /* Centraliza verticalmente */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Garante que o centro do QR code coincida com o centro da imagem */
-  width: 150px;
-  height: 150px;
-  z-index: 10;
-}
-
-#default-image {
-  z-index: 1;
-  width: 100%; /* Mantém o tamanho da imagem responsivo */
-  height: auto; /* Mantém a proporção */
-}
-
-@keyframes granulado {
-  0% {
-    filter: blur(10px) brightness(2) contrast(0.5); /* Começa muito desfocado e brilhante */
-    opacity: 0;
-  }
-  100% {
-    filter: blur(0) brightness(1) contrast(1); /* QR Code nítido no final */
-    opacity: 1;
-  }
-}
-
-.qrcode-animation {
-  animation: granulado 1s ease-out forwards; /* Aplica a animação granular */
-}
+  color: #ffffff !important;
+}/*# sourceMappingURL=style.css.map */
