@@ -237,25 +237,21 @@ button {
   line-height: 35px;
 }
 
-@media (max-width: 768px) {
-  .line-one {
-    flex-direction: column;
-  }
+@media (max-width: 992px) {
   .line-one .col-md-8,
   .line-one .col-md-4 {
     width: 100%;
   }
   .line-one .title {
-    font-size: 40px;
+    font-size: 42px;
+    margin-top: 10px !important;
   }
-  .description,
-  .chanels {
-    display: none !important;
+  .line-one .img-card-qr {
+    display: none;
   }
-}
-@media (min-width: 769px) and (max-width: 992px) {
-  .chanels {
-    display: none !important;
+  .line-two .chanels-content,
+  .line-two .arrow-container {
+    display: none;
   }
 }
 .line-two {
@@ -274,5 +270,9 @@ button {
   .input-group .btn {
     width: 100%;
     margin-top: 0.5rem;
+  }
+  .title {
+    font-size: 32px !important;
+    margin-bottom: 30px !important;
   }
 }/*# sourceMappingURL=style.css.map */

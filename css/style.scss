@@ -276,30 +276,28 @@ button {
 }
 
 // Responsividade para dispositivos menores
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .line-one {
-    flex-direction: column;
-
     .col-md-8,
     .col-md-4 {
       width: 100%;
     }
 
     .title {
-      font-size: 40px;
+      font-size: 42px;
+      margin-top: 10px !important;
+    }
+
+    .img-card-qr {
+      display: none;
     }
   }
 
-  .description,
-  .chanels {
-    display: none !important; // Garante que esses elementos não sejam exibidos em dispositivos móveis
-  }
-}
-
-// Ajuste para telas médias
-@media (min-width: 769px) and (max-width: 992px) {
-  .chanels {
-    display: none !important; // Oculta .chanels em telas médias
+  .line-two {
+    .chanels-content,
+    .arrow-container {
+      display: none;
+    }
   }
 }
 
@@ -312,6 +310,7 @@ button {
   margin: 0 auto; // Centraliza o card horizontalmente
 }
 
+// TODO ajustar o Input "está quebrando" para este tamanho.
 // Ajuste para garantir que o botão fique alinhado com o input em telas menores
 @media (max-width: 576px) {
   .input-group {
@@ -322,5 +321,10 @@ button {
       width: 100%;
       margin-top: 0.5rem;
     }
+  }
+
+  .title {
+    font-size: 32px !important;
+    margin-bottom: 30px !important;
   }
 }
